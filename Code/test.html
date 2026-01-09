@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parallax Hero — 4 layers</title>
+  <style>
+    /* ========== RESET / SAFE GLOBALS ========== */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* ========== HERO / HEADER ========== */
+    header.hero {
+      position: relative;       /* contains absolute layers */
+      width: 100%;
+      height: 100vh;            /* full viewport height */
+      min-height: 400px;        /* avoid collapse on tiny screens */
+      overflow: hidden;         /* hide out-of-bounds layer movement */
+      background-color: #111;   /* fallback while images load */
+      perspective: 1000px;      /* for optional 3D transforms */
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* ========== LAYERS ========== */
+    .layer {
+      position: absolute;       /* positioned relative to header */
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      will-change: transform;
+      pointer-events: none;     /* images won't block clicks */
+      z-index: 1;               /* each layer receives its own z-index below */
+    }
+
+    /* stack order (far -> near) */
+    .layer1 { z-index: 1; }
+    .layer2 { z-index: 2; }
+    .layer3 { z-index: 3; }
+    .layer4 { z-index: 4; }
+
+    /* responsive image sizing — each layer can have its own width */
+    .layer img {
+      display: block;
+      height: auto;
+      max-width: none;  /* we'll set widths per-layer */
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* sensible default sizes for layers (adjust per your artwork) */
+    .layer1 img { width: 1400px; max-width: 140%; } /* background/very wide */
+    .layer2 img { width: 1100px; max-width: 120%; }
+    .layer3 img { width: 800px;  max-width: 100%; }
+    .layer4 img { width: 480px;  max-width: 80%;  }
+
+    /* make sure text content sits on top if you add it */
+    .hero-content {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    /* small screens: scale images down so they don't overflow */
+    @media (max-width: 900px) {
+      .layer1 img { width: 1000px; max-width: 150%; }
+      .layer2 img { width: 800px;  max-width: 130%; }
+      .layer3 img { width: 600px;  max-width: 110%; }
+      .layer4 img { width: 320px;  max-width: 80%;  }
+    }
+
+    @media (max-width: 480px) {
+      header.hero { height: 70vh; }
+      .layer1 img { width: 800px; }
+      .layer2 img { width: 600px; }
+      .layer3 img { width: 420px; }
+      .layer4 img { width: 220px; }
+      .hero-content { top: 40%; padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero" id="hero">
+    <!-- layer 1: farthest (slowest move) -->
+    <div class="layer layer1"><img src="img/header_img_4.png" alt="layer1"></div>
+
+    <!-- layer 2 -->
+    <div class="layer layer2"><img src="img/header_img_3.png" alt="layer2"></div>
+
+    <!-- layer 3 -->
+    <div class="layer layer3"><img src="img/header_img_2.png" alt="layer3"></div>
+
+    <!-- layer 4: nearest (fastest move) -->
+    <div class="layer layer4"><img src="img/header_img_1.png" alt="layer4"></div>
+
+  
+  </header>
+
+  <main>
+    <section style="padding:2rem;">
+      <p>Page content starts here. Scroll to see the parallax effect.</p>
+      <div style="height:2000px;"></div>
+    </section>
+  </main>
+
+  <script>
+    // Smooth performant scroll parallax using rAF
+    (function () {
+      const layers = [
+        {el: document.querySelector('.layer1'), speed: 0.18},
+        {el: document.querySelector('.layer2'), speed: 0.35},
+        {el: document.querySelector('.layer3'), speed: 0.55},
+        {el: document.querySelector('.layer4'), speed: 0.85}
+      ];
+
+      let latestScroll = 0;
+      let ticking = false;
+
+      function onScroll() {
+        latestScroll = window.scrollY || window.pageYOffset;
+        if (!ticking) {
+          window.requestAnimationFrame(updatePositions);
+          ticking = true;
+        }
+      }
+
+      function updatePositions() {
+        const s = latestScroll;
+        // vertical translate per layer; keep the horizontal centering transform
+        layers.forEach(layer => {
+          // base translate to keep centered + vertical movement based on speed
+          // We do translate3d for GPU acceleration.
+          layer.el.style.transform = `translate(-50%, -50%) translate3d(0, ${s * layer.speed}px, 0)`;
+        });
+        ticking = false;
+      }
+
+      // init: make sure images are loaded so header has height
+      function init() {
+        // If images haven't loaded, wait for window load
+        if (document.readyState === 'complete') {
+          window.addEventListener('scroll', onScroll, { passive: true });
+          onScroll(); // set initial positions
+        } else {
+          window.addEventListener('load', () => {
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+          }, { once: true });
+        }
+      }
+      init();
+    })();
+  </script>
+</body>
+</html>
