@@ -59,7 +59,7 @@ header {
 */
 
 .hero {
-    background-image: url('../../Images/hero_image.jpg');
+    background-image: url('../images/hero_image.jpg');
     background-size: cover;
     background-position: top;
     padding: 20px;
@@ -488,7 +488,7 @@ color: #ffffff;
 .full-width-img {
   width: 100%;
   min-height: 40vh;
-  background-image: url('../../Images/section2-img.png');
+  background-image: url('../images/section2-img.png');
   background-size:cover;
   background-position: center;
   background-color: #ffffff;
