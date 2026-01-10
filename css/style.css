@@ -13,7 +13,7 @@ body {
   background-color: #253432;
   color: #ffffff;
   line-height: 1.6;
-
+  width: 100%;
 }
 
 
@@ -40,7 +40,7 @@ header {
     column-gap: 0.5vw;
     row-gap: 0.5vw;
     width: 100%; 
-    aspect-ratio: 16 / 8.5;
+    aspect-ratio: 16 / 7.4;
 }
 
 /*
@@ -61,7 +61,7 @@ header {
     background-image: url('../images/hero_image.jpg');
     background-size: cover;
     background-position: top;
-    padding: 20px;
+    padding: 1%;
     width: 100%;
 }
 
@@ -113,7 +113,7 @@ nav {
     grid-row-end: 5;
     width: 100%;
     text-align: left;
-    padding: 5%;
+    padding: 3%;
 } 
 
 header nav a {
@@ -237,6 +237,8 @@ input[type="text"] {
     font-weight: 800;
     white-space: nowrap;
     font-family: 'Zilla Slab', serif;
+    font-size: clamp(0.75rem, 1vw, 1rem); 
+    min-width: 8rem;
 }
 
 .map_button {
@@ -247,9 +249,9 @@ input[type="text"] {
   gap: 0.5rem;
   border-width: 1px;
   border-color: #ffffff;
-  border-radius: 8px;
+  border-radius: clamp(5px, 1vw, 8px);
   text-transform: uppercase;
-  width: clamp(15%, 5vw, 20%);
+  width: clamp(13%, 5vw, 18%);
   aspect-ratio: 16 / 9;
   white-space: nowrap;
   padding: 1.5%;
@@ -309,8 +311,8 @@ input[type="text"] {
 }
 
 .wrapper {
-  padding-left: clamp(12rem, 12vw, 12rem);
-  padding-right: clamp(12rem, 12vw, 12rem);
+  padding-left: clamp(12%, 12vw, 15%);
+  padding-right: clamp(12%, 12vw, 15%);
   padding-top: clamp(4rem, 10vw, 5rem);
   padding-bottom: clamp(4rem, 10vw, 5rem);
   display: flex;
@@ -511,8 +513,7 @@ color: #ffffff;
 .section2 p {
   color: #253432;
   text-align: center;
-  padding-left: 10rem;
-  padding-right: 10rem;
+  
   margin-bottom: -5rem;
 }
 
@@ -609,6 +610,60 @@ h2 {
 }
 
 
+
+
+/*=========================
+   Section 5
+========================= */
+
+.large-map {
+flex: 0 0 100%;
+aspect-ratio: 16 / 7;
+border: 2px solid transparent;
+background:
+    linear-gradient(190deg, #ffffff, transparent) border-box;
+  position: relative;
+  border-radius: 1.2rem;
+  overflow: hidden;
+
+}
+
+.large-map img {
+  width: 100%;
+  
+  object-fit: cover;
+  
+}
+
+.card-small-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0)
+  );
+
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.map-overlay h4 {
+margin: 0;
+font-size: 1.5rem;
+font-family: 'Zilla Slab', serif;
+color: #ffffff;
+}
+
+.card-small-overlay p {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  line-height: 1.1;
+}
 
 /* Footer */
 footer {
