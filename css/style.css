@@ -247,7 +247,10 @@ input[type="text"] {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-width: 1px;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: clamp(5px, 1vw, 8px);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
   border-color: #ffffff;
   border-radius: clamp(5px, 1vw, 8px);
   text-transform: uppercase;
@@ -617,20 +620,18 @@ h2 {
 ========================= */
 
 .large-map {
-flex: 0 0 100%;
-aspect-ratio: 16 / 7;
-border: 2px solid transparent;
-background:
+  flex: 0 0 100%;
+  aspect-ratio: 16 / 7;
+  border: 2px solid transparent;
+  background:
     linear-gradient(190deg, #ffffff, transparent) border-box;
   position: relative;
   border-radius: 1.2rem;
   overflow: hidden;
-
 }
 
 .large-map img {
   width: 100%;
-  
   object-fit: cover;
   
 }
