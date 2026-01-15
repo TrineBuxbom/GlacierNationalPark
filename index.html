@@ -29,21 +29,22 @@
 </head>
 
 
-<body class="bg-gray-50 text-gray-900 antialiased">
+<body>
 
   <!------------ Hero ------------>
-  <header class="hero">
+  <header class="hero indexhero" style="--hero-bg: url('../images/header-img.jpg');">
     
   <!-- NAV -->
       <nav class="nav" id="nav">
-        <img class="logo" src="images/logo.png">
+        <a href="index.html"><img class="logo" src="images/logo.png"></a>
         <div class="nav_links">
           
-            <a href="#" class="nav_link">Home</a>
-            <a href="#" class="nav_link">About</a>
-            <a href="#" class="nav_link">Wildlife</a>
-            <a href="#" class="nav_link">History</a>
-            <a href="#" class="nav_link">Contact</a>
+            <a href="index.html" class="nav_link">Home</a>
+            <a href="mammals.html" class="nav_link">Wildlife</a>
+            <a href="history.html" class="nav_link">History</a>
+            <a href="visit.html" class="nav_link">Visit</a>
+            <a href="about.html" class="nav_link">About</a>
+            
 
         </div>
        
@@ -61,10 +62,10 @@
                 </button>
             <!-- </form> -->
         </div>
-<!-- BOOK TOUR BUTTON -->
+<!-- PARK MAP BUTTON -->
 
-            <button class="main_button booktour">
-                <a href="#">Book tour</a>
+            <button class="main_button" onclick="window.location.href='map.html'">
+                <a href="#">Park Map</a>
             </button>
 
 <!-- BURGER MENU -->
@@ -75,9 +76,9 @@
 
 <!-------------- Map button ---------------->
       <div class="hero_content">
-        <button class="map_button">
+        <button class="map_button" onclick="window.location.href='map.html'">
             <img src="images/map.png" alt="Map icon"> 
-            <a href="#">Show map</a>
+            <a href="map.html">Park map</a>
         </button>
       </div>
   </header>
@@ -98,14 +99,12 @@
       
 
       <p>
-        Each destination offers a unique experience, inviting travelers to create lifelong memories in these extraordinary locations. Each destination offers a unique experience, inviting travelers to create lifelong memories in these extraordinary locations.Each destination offers a unique experience, inviting travelers to create 
+        A place where rugged mountains meet crystal-clear lakes, and nature still feels truly wild. Located in northwestern Montana, Glacier National Park is home to breathtaking landscapes, diverse wildlife, and over 700 miles of trails to explore.      
       </p>
-
       <p>
-        Each destination offers a unique experience, inviting travelers to create lifelong memories in these extraordinary locations. Each destination offers a unique experience, inviting travelers to create lifelong memories in these extraordinary locations.
+        Whether you’re here to hike, drive the famous Going-to-the-Sun Road, spot wildlife, or simply take in the views, Glacier offers something unforgettable in every season. This site will help you plan your visit, discover must-see spots, and make the most of your time in one of America’s most stunning national parks.      
       </p>
-
-      <button class="main_button">Book Tour</button>
+      <button class="main_button"><a href="visit.html">Safety Precautions</a></button>
     </div>
 
     <div class="hero-image">
@@ -115,44 +114,44 @@
 
   <!-- CARD SCROLLER -->
   <div class="card-scroll">
-    <article class="card-small">
+    <article class="card-small"><a href="activities.html">
       <img src="images/activities.jpg" alt="">
       <div class="card-small-overlay">
         <h4>Activities</h4>
         <p>Experience the vibrant energy of Barcelona, Spain's</p>
-      </div>
+      </div></a>
     </article>
 
-    <article class="card-small">
+    <article class="card-small"><a href="visit.html">
       <img src="images/accommodation.jpg" alt="">
       <div class="card-small-overlay">
         <h4>Accommodation</h4>
         <p>Experience the vibrant energy of Barcelona, Spain's</p>
-      </div>
+      </div></a>
     </article>
 
-    <article class="card-small">
+    <article class="card-small"><a href="visit.html">
       <img src="images/restaurants.jpg" alt="">
       <div class="card-small-overlay">
         <h4>Restaurants</h4>
         <p>Experience the vibrant energy of Barcelona, Spain's</p>
-      </div>
+      </div></a>
     </article>
 
-    <article class="card-small">
+    <article class="card-small"><a href="visit.html">
       <img src="images/camping.jpg" alt="">
       <div class="card-small-overlay">
         <h4>Camping</h4>
         <p>Experience the vibrant energy of Barcelona, Spain's</p>
-      </div>
+      </div></a>
     </article>
 
-    <article class="card-small">
+    <article class="card-small"><a href="visit.html">
       <img src="images/vehicles.jpg" alt="">
       <div class="card-small-overlay">
-        <h4>Vehicles</h4>
+        <h4>Practical information</h4>
         <p>Experience the vibrant energy of Barcelona, Spain's</p>
-      </div>
+      </div></a>
     </article>
   </div>
 </div>
@@ -238,7 +237,7 @@
 
 <!-- SECTION 3 -->
  
- <div class="full-width-img sct3-img">
+  <div class="full-width-img sct3-img" style="--sct3-bg: url('../images/section3-img.png');">
   <div class="section2-overlay">
   <div class="wrapper">
   <h2>Wildflower, Wilderness, & Wildlife</h2>
@@ -317,7 +316,7 @@
         Each destination offers a unique experience, inviting travelers to create lifelong memories in these extraordinary locations. Each destination offers a unique experience, inviting travelers to create lifelong memories in these extraordinary locations.
       </p>
 
-      <button class="main_button">Book Tour</button>
+      <button class="main_button" onclick="window.location.href='about.html'">Book Tour</button>
     </div>
 
     <div class="hero-image">
@@ -333,7 +332,7 @@
     
   <!-- LARGE MAP -->
   
-    <article class="large-map">
+    <article class="large-map" onclick="window.location.href='map.html'">
       <img src="images/largemap.jpg" alt="">
       <div class="card-small-overlay map-overlay">
         <h4>Park Map</h4>
@@ -355,24 +354,29 @@
 
         <div class="footer-info">
          <img class="footer-logo" src="images/logolarge.png" alt="Website Logo">
-         <h5>Quick Links </h5>
-         <p>The park is on U.S. 2 and near U.S. 91 and 93. <br> Read more about transport via bus, train, and airline</p>
+         <h5>Find the park </h5>
+         
+         <p>
+          64 Grinnell Drive <br> 
+          Glacier National Park Headquarters <br> 
+          West Glacier, MT 59936 <br> <br>
+          The park is on U.S. 2 and near U.S. 91 and 93. 
+        </p>
         </div>
       
       <div class="footer-links">
         <ul>
-          <h5>Links</h5>
-          <li><a href="#" class="footer_link">About Us</a></li>
-          <li><a href="#" class="footer_link">Terms of Service</a></li>
-          <li><a href="#" class="footer_link">Contact Us</a></li>
-          <li><a href="#" class="footer_link">Contact Us</a></li>
-          <li><a href="#" class="footer_link">Contact Us</a></li>
+          <h5>Explore</h5>
+          <li><a href="mammals.html" class="footer_link">Wildlife</a></li>
+          <li><a href="history.html" class="footer_link">History</a></li>
+          <li><a href="visit.html" class="footer_link">Visit</a></li>
+          <li><a href="#" class="footer_link">Activities</a></li>
         </ul>
          <ul>
-          <h5>Explore</h5>
+          <h5>Links</h5>
           <li><a href="#" class="footer_link">Privacy Policy</a></li>
           <li><a href="#" class="footer_link">Terms of Service</a></li>
-          <li><a href="#" class="footer_link">Contact Us</a></li>
+          <li><a href="about.html" class="footer_link">Contact</a></li>
         </ul>
       </div>
 
@@ -406,5 +410,6 @@
       nav.classList.toggle('active');
      });
     </script>
+
 </body>
 </html>
