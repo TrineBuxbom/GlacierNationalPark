@@ -221,6 +221,11 @@ input[type="text"] {
   .burger {
     display: block;             
   }
+  .safe {
+    flex: 0 0 100%;
+    min-width: 30rem;
+
+  }
 }
 
 
@@ -399,7 +404,7 @@ h1 {
   gap: 1.5rem;
   margin-top: 4rem;
   background-color: none;
-  padding-left: 8%;
+  padding-left: 6%;
 
   overflow-x: auto;
   padding-bottom: 1rem;
@@ -774,8 +779,43 @@ color: #ffffff;
   align-items: start;
 }
 
+.safety-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: clamp(1rem, 4vw, 1.5rem);
+  align-items: stretch;
+  justify-items: stretch;
+  padding-bottom: 10rem;
+}
+
+.safety-section p {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  color: #253432;
+}
 
 
+.safe { 
+  flex: 0 0 30%;
+  width: clamp(5rem, 20vw, 25rem);
+
+}
+
+.safe-heading {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.safe img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.safe h5 {
+  
+  font-weight: 700;
+}
 
 
 /* ------------ MAP ---------------------------*/
@@ -787,7 +827,7 @@ color: #ffffff;
   align-items: center;
   width: 100%;
   padding-left: 10%;
-  padding-right: 0%;
+  padding-right: 10%;
 }
 
 .full-map img {
@@ -795,6 +835,12 @@ color: #ffffff;
   border-radius: 1.2rem;
   object-fit: cover;
 }
+
+
+
+
+
+
 
 
 /*-------------------------------------------------------*/
