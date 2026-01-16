@@ -198,11 +198,18 @@ input[type="text"] {
   background: none;
   border: none;
   cursor: pointer;
+  color: #ffffff;
 }
 
 /* MOBILE BREAKPOINT */
 @media (max-width: 768px) {
-  .nav {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .nav_links {
     display: none;             
     position: absolute;
     top: 64px;
@@ -213,13 +220,21 @@ input[type="text"] {
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
   }
 
+  .search {
+    display: none;
+  }
+  .nav-map-btn {
+    display: none;
+  }
+
   .nav.active {
     display: flex;   
     flex-direction: column;          
   }
 
   .burger {
-    display: block;             
+    display: block;    
+    margin-top: 4px;         
   }
   .safe {
     flex: 0 0 100%;
