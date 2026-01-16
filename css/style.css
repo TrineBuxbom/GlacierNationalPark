@@ -564,6 +564,9 @@ color: #ffffff;
 .safe-heading {
   margin-bottom: 2rem;
 }
+.alerts {
+  padding-top: 8rem;
+}
 }
 
 
@@ -689,9 +692,12 @@ h2 {
 }
 
 .news-button {
-  margin-left: 40%;
-  margin-right: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1rem;
+  min-width: 150px;
+  width: fit-content;
 }
 
 
