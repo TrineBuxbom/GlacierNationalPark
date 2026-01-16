@@ -578,6 +578,7 @@ color: #ffffff;
   display: flex;
   gap: 4rem;
   align-self: center;
+  z-index: 1;
 }
 
 .active {
