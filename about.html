@@ -79,14 +79,25 @@
         </div>
 <!-- PARK MAP BUTTON -->
 
-            <button class="main_button" onclick="window.location.href='map.html'">
+            <button class="main_button nav-map-btn" onclick="window.location.href='map.html'">
                 <a href="#">Park Map</a>
             </button>
+
 
 <!-- BURGER MENU -->
          <button class="burger" id="burger" aria-label="Menu">
           ☰
           </button>
+
+          <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="mammals.html">Wildlife</a>
+      <a href="history.html">History</a>
+      <a href="visit.html">Visit</a>
+      <a href="about.html">About</a>
+      <a href="map.html">Park Map</a>
+    </div>
       </nav>
 
 
@@ -146,10 +157,11 @@
       <h2 class="ranger">Guided Ranger Tours</h2>
 
       <p>
-        Want to explore Glacier National Park with expert guidance? Guided tours help you discover the park’s landscapes, wildlife, and history while making your visit easy and informative.
-     </p>
+        Join a guided ranger tour to experience Glacier National Park through the eyes of the experts who know it best. Ranger-led tours offer engaging insights into the park’s wildlife, geology, history, and fragile ecosystems, bringing the landscape to life through stories and local knowledge.       
+      </p>
+
       <p>
-        Choose from boat tours, ranger-led walks, and educational programs for different interests and ability levels. To book a tour, visit the official Glacier National Park website or an approved tour provider. Booking ahead is recommended, especially during peak season.      </p>
+        These guided experiences are designed for a wide range of ages and abilities, making them a great option for families, first-time visitors, and those looking to learn more as they explore. In addition to education, ranger tours promote safe and responsible park use, helping protect both visitors and the natural environment. Tour themes, locations, and schedules vary by season, so be sure to check current offerings during your visit.      
       </p>
 
       <button class="main_button" onclick="window.location.href='about.html'">Book Tour</button>
@@ -238,13 +250,13 @@
   </script>
 
   <!-- JS for burger menu -->
-   <script>
+ <script>
     const burger = document.getElementById('burger');
-    const nav = document.getElementById('nav');
+    const mobileMenu = document.getElementById('mobileMenu');
 
     burger.addEventListener('click', () => {
-      nav.classList.toggle('active');
-     });
-    </script>
+      mobileMenu.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

@@ -26,7 +26,6 @@ a {
 
 
 
-
 /*-------------------------------------------------------*/
 
 
@@ -239,11 +238,31 @@ input[type="text"] {
   .safe {
     flex: 0 0 100%;
     min-width: 30rem;
-
+  }
+  .mobile-menu.show { 
+    display: flex; 
   }
 }
 
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #fff;
+      width: 100%;
+    }
 
+    .mobile-menu a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      border-top: 1px solid #eee;
+      transition: background-color 0.3s;
+    }
+
+    .mobile-menu a:hover {
+      background-color: #f0f0f0;
+    }
 
 /*-------------------------------------------------------*/
 
@@ -260,7 +279,8 @@ input[type="text"] {
     font-weight: 800;
     white-space: nowrap;
     font-family: 'Zilla Slab', serif;
-    font-size: clamp(0.75rem, 1vw, 1rem); 
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    cursor: pointer; 
 }
 
 
@@ -282,6 +302,7 @@ input[type="text"] {
     transparent, #ffffff, transparent);
   text-transform: uppercase;
   font-weight: 200;
+  cursor: pointer;
 }
 
 .map_button img {
@@ -318,7 +339,9 @@ input[type="text"] {
   height: 2rem;
 }
 
-
+button:hover {
+  opacity: 0.8;
+}
 
 
 
@@ -380,6 +403,14 @@ h1 {
   column-count: 3;
   column-gap: 2rem;
   margin-bottom: 4rem;
+}
+
+.short-text {
+  max-width: 100%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 4rem;
+
 }
 
 /* =========================
@@ -500,6 +531,7 @@ color: #ffffff;
   color: #ffffff;
 }
 
+
 /* =========================
    MOBILE LAYOUT
 ========================= */
@@ -511,6 +543,27 @@ color: #ffffff;
   .hero-text p {
     max-width: 100%;
   }
+
+  .text-columns {
+    column-count: 1;
+    margin-bottom: 4rem;
+}
+.short-text {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.sct-wildlife {
+  padding-bottom: -4rem;
+  padding-top: -4rem;
+  margin-top: -4rem;
+  margin-bottom: -4rem;
+}
+.safety-section {
+  padding-top: 8rem;
+}
+.safe-heading {
+  margin-bottom: 2rem;
+}
 }
 
 
@@ -533,6 +586,10 @@ color: #ffffff;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
+.inactive:hover {
+  cursor: pointer;
+  color: #E39528;
+}
 
 
 /*-------------------------------------------------------*/
@@ -662,7 +719,7 @@ h2 {
 
 .sct3-img p {
   color: #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 0.2rem;
   text-align: left;
 }
 
@@ -671,7 +728,7 @@ h2 {
 }
 
 .filler {
-  height: 8rem;
+  height: 4rem;
 }
 
 
@@ -740,6 +797,10 @@ h2 {
   width: 100%;
   object-fit: cover;
   
+}
+
+.large-map:hover {
+  cursor: pointer;
 }
 
 .card-small-overlay {
@@ -812,9 +873,8 @@ color: #ffffff;
 
 
 .safe { 
-  flex: 0 0 30%;
-  width: clamp(5rem, 20vw, 25rem);
-
+  flex: 1 1 300px;
+  min-width: 0;
 }
 
 .safe-heading {
